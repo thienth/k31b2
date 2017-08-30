@@ -1,0 +1,26 @@
+.bg-red{
+	/* background: red; /* màu nền*/
+	/* background-color: red; /* màu nền*/
+	/* color: rgb(59, 171, 26); /* màu chữ*/
+	height: 200px;
+	width: 200px;
+	background-image: url('../images/cay-ngo.jpeg'); 
+	background-repeat: no-repeat; /* repeat-x repeat-y */
+	background-position: top left; /* Vị trí của ảnh nền top bottom left right center*/
+	background-attachment: fixed;
+	border: 1px solid #dedede;
+	border-radius: 50%;
+
+}
+
+.parent{
+	width: 600px;
+	height: 600px;
+	background: green;
+}
+.child{
+	width: 50px;
+	height: 50px;
+	background: red;
+	margin: 10px;
+}
