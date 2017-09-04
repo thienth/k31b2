@@ -1,0 +1,29 @@
+@font-face{
+	font-family: 'thienth';
+	src: url(../fonts/Indie_Flower/IndieFlower.ttf);
+}
+*{
+	font-family: 'thienth';
+}
+.square{
+	color: brown;
+	/*text-align: right;*/
+	
+	background-image: url(../images/water.jpg);
+	width: 400px;
+	height: 400px;
+}
+.square p{
+	text-align: justify;
+	text-transform: capitalize;
+	text-indent: 20px;
+}
+a{
+	text-decoration: none;
+}
+.container{
+	margin: auto;
+	width: 960px;
+	min-height: 600px;
+	background: #dedede;
+}
