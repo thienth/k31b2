@@ -1,0 +1,39 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.container{
+	width: 960px;
+	margin: auto;
+}
+/*
+	BEGIN HEADER
+ */
+.logo{
+	float: left;
+	width: 25%;
+}
+.search-bar{
+	margin: auto;
+	width: 400px;
+	background: green;
+	min-height: 70px;
+	text-align: center;
+}
+.search-bar input{
+    width: 350px;
+    margin: auto;
+    line-height: 35px;
+    margin-top: 15px;
+    border-radius: 20px;
+    border: 1px solid #dedede;
+    padding-left: 15px;
+    font-size: 13px;
+}
+.search-bar input:focus{
+	outline: none;
+}
+
+/*
+	END HEADER
+ */
