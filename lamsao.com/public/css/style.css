@@ -16,10 +16,10 @@
 .search-bar{
 	margin: auto;
 	width: 400px;
-	background: green;
 	min-height: 70px;
 	text-align: center;
 	position: relative;
+	display: inline-block;
 }
 .search-bar input{
     width: 350px;
@@ -28,18 +28,53 @@
     margin-top: 15px;
     border-radius: 20px;
     border: 1px solid #dedede;
-    padding-left: 16px;
+    padding-left: 15px;
     font-size: 13px;
 }
 .search-bar button{
 	width: 40px;
-	height: 35px;
-	position: absolute;
-	top: 15px;
-	right: 30px;
+    height: 35px;
+    position: absolute;
+    top: 16px;
+    right: 19px;
+    font-size: 20px;
+    border: none;
+    background: none;
+    color: #ccc;
+    cursor: pointer;
+}
+.search-bar button:hover{
+	color: #000;
 }
 .search-bar input:focus{
 	outline: none;
+}
+
+.favor{
+	width: 250px;
+    float: right;
+}
+.favor ul{
+	list-style: none;
+    list-style-type: none;
+    text-align: right;
+}
+.favor ul li{
+	display: inline-block;
+	width: 100px;
+	text-align: center;
+	border-right: 1px dashed #dedede; 
+}
+.favor ul li:last-child{
+	border-right: none;
+}
+.favor ul li a{
+	text-decoration: none;
+	display: block;
+	color: #000;
+}
+.favor ul li a:hover{
+	color: #2ca9e1;
 }
 
 /*
