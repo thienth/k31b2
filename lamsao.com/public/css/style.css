@@ -58,6 +58,7 @@
 	list-style: none;
     list-style-type: none;
     text-align: right;
+    padding-top: 10px;
 }
 .favor ul li{
 	display: inline-block;
