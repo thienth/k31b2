@@ -113,7 +113,7 @@ nav ul li a{
 nav ul li:hover{
 	background-color: lightblue;
 }
-nav ul li:hover ul.dropdown{
+nav ul li:hover>ul.dropdown{
 	display: block;
 }
 ul.dropdown{
@@ -129,6 +129,12 @@ ul.dropdown li{
 }
 ul.dropdown li:first-child{
 	border-top: 1px dashed #ccc;
+}
+ul ul ul.dropdown{
+	display: none;
+	position: absolute;
+	left: 100%;
+	top: 0px;
 }
 
 /*
