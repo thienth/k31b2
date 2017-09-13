@@ -1,6 +1,7 @@
 *{
 	margin: 0;
 	padding: 0;
+	font-family: arial;
 }
 .container{
 	width: 960px;
@@ -146,24 +147,32 @@ li.mega-menu{
 	position: static;
 }
 .mega-dropdown{
-	/*display: none;*/
+	display: none;
 	position: absolute;
 	top: 45px;
 	left: 0;
 	right: 0;
-	min-height: 200px;
-	background: lightpink;
+	background: #fff;
+	min-height: 215px;
+	box-shadow: 0 2px 1px 1px #ececec;
 }
 nav ul li.mega-menu:hover .mega-dropdown{
 	display: block;
 }
 .mega-dropdown li{
+	background-color: #fff !important;
 	width: 24%;
-	border-right: 1px solid #000;
+	/*border-right: 1px solid #000;*/
 	float: left;
-	height: 200px;
+	/*height: 200px;*/
 	padding-left: 3px; 
 	margin-right: 5px;
+}
+.mega-dropdown li p{
+	line-height: 14px;
+	color: #000;
+	font-size: 13px;
+	text-align: left;
 }
 /*
 * END NAV
@@ -171,3 +180,47 @@ nav ul li.mega-menu:hover .mega-dropdown{
 /*
 	END HEADER
  */
+
+/*
+	BEGIN HOT-News
+ */
+main{
+	margin: 10px 0px;
+}
+.main-news{
+	width: 66%;
+	float: left;
+	/*min-height: 400px;*/
+	/*background: aqua;*/
+	position: relative;
+}
+.new-title{
+	position: absolute;
+    left: 0;
+    right: 0;
+    background: rgba(68, 66, 66, 0.6);
+    min-height: 80px;
+    bottom: 0;
+    color: #fff;
+    padding: 0 25px;
+}
+.new-title a{
+	color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    background: transparent;
+    padding: 10px 0;
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
