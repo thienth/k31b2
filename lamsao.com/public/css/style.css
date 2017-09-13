@@ -14,6 +14,9 @@
 .relative{
 	position: relative;
 }
+img{
+	width: 100%;
+}
 /*
 	BEGIN HEADER
  */
@@ -143,7 +146,7 @@ li.mega-menu{
 	position: static;
 }
 .mega-dropdown{
-	display: none;
+	/*display: none;*/
 	position: absolute;
 	top: 45px;
 	left: 0;
@@ -155,11 +158,12 @@ nav ul li.mega-menu:hover .mega-dropdown{
 	display: block;
 }
 .mega-dropdown li{
-	width: 32%;
+	width: 24%;
 	border-right: 1px solid #000;
 	float: left;
 	height: 200px;
 	padding-left: 3px; 
+	margin-right: 5px;
 }
 /*
 * END NAV
