@@ -95,9 +95,10 @@ img{
 nav{
 	background-color: #2ca9e1;
 }
-nav ul li{
+nav ul, ul.bottom-news{
 	list-style-type: none;
 	list-style: none;
+	z-index: 1;
 }
 nav ul li{
 	float: left;
@@ -158,6 +159,7 @@ li.mega-menu{
 }
 nav ul li.mega-menu:hover .mega-dropdown{
 	display: block;
+	z-index: 1;
 }
 .mega-dropdown li{
 	background-color: #fff !important;
@@ -200,7 +202,7 @@ main{
     right: 0;
     background: rgba(68, 66, 66, 0.6);
     min-height: 80px;
-    bottom: 0;
+    bottom: 3px;
     color: #fff;
     padding: 0 25px;
 }
@@ -213,10 +215,28 @@ main{
     display: block;
 }
 
-
-
-
-
+.aside-news{
+	width: 33%;
+	float: left;
+	/*background: green;*/
+}
+.aside-new_unit>a{
+	display: block;
+	width: 94%;
+	padding-left: 9px;
+}
+.aside-new_unit>.new-title{
+	left: 9px;
+    right: 10px;
+    bottom: 3px;
+}
+.bottom-news li{
+	width: 49%;
+	float: left;
+	display: block;
+	margin-right: 5px;
+	position: relative;
+}
 
 
 
