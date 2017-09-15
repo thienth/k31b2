@@ -248,50 +248,13 @@ main{
 /*
 	BEGIN Cate-list
  */
-.cate-list{
-	margin-top: 20px;
-}
 .cate-list>h3{
 	background: url(../images/cate-border.png) repeat-x;
     background-position: 0px 13px;
+    /*padding-left: 15px;*/
     border-left: 3px solid #ff4d92;
-    margin-bottom: 10px;
+}
 
-}
-.cate-list>h3>a>span{
-	display: inline-block;
-    width: 110px;
-    background: #fff;
-    padding-left: 15px;
-    text-transform: uppercase;
-    color: #ff4d92
-}
-.cate-unit{
-	float: left;
-	width: 24%;
-	margin-right: 7px;
-	min-height: 200px;
-	position: relative;
-}
-.cate-unit>a{
-	display: block;
-}
-.cate-unit>.fly-heart{
-	position: absolute;
-    top: 5px;
-    right: 5px;
-    width: 50px;
-    height: 50px;
-    background: rgba(68, 66, 68, 0.6);
-    text-align: center;
-    line-height: 56px;
-    font-size: 30px;
-    border-radius: 49%;
-    color: #fff;
-}
-.cate-unit>.fly-heart:hover{
-    background-color: #ff4d92;
-}
 
 /*
 	END Cate-list
