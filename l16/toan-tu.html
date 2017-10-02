@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	
+	<script>
+		
+	// var gioiTinh = prompt('Gioi tinh cua ban la:');
+	// if(gioiTinh == "nam")
+	// {
+	// 	document.write('Xin chao anh');
+	// }
+	// else if(gioiTinh == 'nu')
+	// {
+	// 	document.write('Xin chao chi');	
+	// }
+	// else
+	// {
+	// 	document.write('Xin chao ban');
+	// }
+	// switch (gioiTinh) {
+	// 	case "nam":
+	// 		document.write('Xin chao anh');
+	// 		break;
+	// 	case "nu":
+	// 		document.write('Xin chao chi');
+	// 		break;
+	// 	default:
+	// 		document.write('Xin chao ban');
+	// 		break;
+	// }
+
+
+	
+	var canhA = prompt('Do dai canh A');
+	var canhB = prompt('Do dai canh B');
+	var canhC = prompt('Do dai canh C');
+
+	if(!isNaN(canhA) && !isNaN(canhB) && !isNaN(canhC)){
+		canhA = parseInt(canhA);
+		canhB = parseInt(canhB);
+		canhC = parseInt(canhC);
+
+		// check do dai co the hinh thanh tam giac hay khong
+		if(canhA+canhB > canhC && canhA+canhC > canhB && canhB+canhC > canhA){
+
+			// tinh chu vi
+			var chuVi = canhA + canhB + canhC;
+			var p = chuVi/2;
+			var s = Math.sqrt(p*(p-canhA)*(p-canhB)*(p-canhC));
+			console.log(`chu vi: ${chuVi}`);
+			console.log(`dien tich: ${s}`);
+		}else{
+			console.log('Khong du dieu kien hinh thanh tam giac');
+		}
+
+		// tinh dien tich
+		 
+		 
+		 
+		 
+	}else{
+		console.log('cac canh khong phai la so => khong hinh thanh tam giac');
+	}
+
+	// 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>
