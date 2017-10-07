@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<h2 id="target">0</h2>
+	<button type="button" onclick="countPlus()">Click me</button>
+	<div onmousemove="over()" style="width: 50px; height: 50px; background: green">
+		
+	</div>
+
+	<script type="text/javascript">
+
+		function over(){
+			console.log('mouse over');
+		}
+
+		var count = 0;
+		function countPlus(){
+			count++;
+			document.getElementById('target').innerText = count;
+		}
+
+
+		var x = 5, y = 6, z= 7;
+		var a = 8, b = 2, c = 10;
+		var d = 4, e = 2, f = 3;
+
+		if(checkTamGiac(x, y, z) == true){
+			console.log(`${x}, ${y}, ${z} có thể hình thành tam giác`);
+		}
+		if(checkTamGiac(a, b, c) == true){
+			console.log(`${a}, ${b}, ${c} có thể hình thành tam giác`);
+		}
+		if(checkTamGiac(d, e, f) == true){
+			console.log(`${d}, ${e}, ${f} có thể hình thành tam giác`);
+		}
+
+		function checkTamGiac(so1, so2, so3){
+			if(so1+so2>so3 && so1+so3>so2 && so2+so3>so1){
+				return true;
+			}else{
+				return false;
+			}
+		}
+
+		// // hàm trong lập trình javascript
+		// function tinhTong(x, y, z){ // định nghĩa hàm
+		// 	return x+y+z;
+		// }
+
+		// var tong = tinhTong(5,7,9); // thực thi hàm
+		// debugger;
+
+		
+		
+		
+	</script>
+</body>
+</html>
