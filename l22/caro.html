@@ -76,6 +76,7 @@
 			var xDim = e.getAttribute("x");
 			var yDim = e.getAttribute("y");
 
+			// check hang ngang
 			// tim tat ca cac the td co cung toa do y
 			var listTd = document.querySelectorAll(`[y="${yDim}"]`);
 			var count = 0;
@@ -94,6 +95,10 @@
 			if(count >= 5){
 				return true;
 			}
+
+			count = 0;
+			// check theo hang doc
+			listTd = ?????
 
 			return false;
 		}
