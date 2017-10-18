@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		td{
+			height: 40px;
+			width: 40px;
+		}
+	</style>
+</head>
+<body>
+	<select></select>
+	<table border="1">
+		<tbody>
+		</tbody>
+	</table>
+
+	<script type="text/javascript">
+		var groundSize = 0;
+		// 1. vẽ ra các option của thẻ select
+		var select = document.querySelector('select');
+		// 2. tạo ra các option cho select có giá trị từ 5-20
+		var options = `<option value="0">Chọn kích cỡ bàn</option>`;
+		for (var i = 5; i <= 20; i++) {
+			options += `<option value="${i}">${i}</option>`;
+		}
+		select.innerHTML = options;
+		// 3. lắng nghe sự kiện khi thẻ select thay đổi giá trị
+		select.addEventListener('change', function(){
+			groundSize = select.value;
+			if(groundSize == 0){
+				return false;
+			}
+
+			// 1. gọi hàm vẽ bàn cờ
+			draw();
+		});
+
+		function draw(){
+			var chessTable = ``;
+			var tbody = document.querySelector('tbody');
+			for (var i = 0; i < groundSize; i++) {
+				chessTable += `<tr>`;
+				for (var j = 0; j < groundSize; j++) {
+					chessTable += `<td></td>`;
+				}
+				chessTable+= `</tr>`;
+			}
+
+			tbody.innerHTML = chessTable;
+		}
+
+	</script>
+	
+</body>
+</html>
