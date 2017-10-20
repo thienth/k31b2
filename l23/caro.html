@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		td{
+			height: 40px;
+			width: 40px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<select></select>
+	<table border="1">
+		<tbody>
+		</tbody>
+	</table>
+
+	<script type="text/javascript">
+		var groundSize = 0;
+		var turn = "X";
+		// 1. vẽ ra các option của thẻ select
+		var select = document.querySelector('select');
+		// 2. tạo ra các option cho select có giá trị từ 5-20
+		var options = `<option value="0">Chọn kích cỡ bàn</option>`;
+		for (var i = 5; i <= 20; i++) {
+			options += `<option value="${i}">${i}</option>`;
+		}
+		select.innerHTML = options;
+		// 3. lắng nghe sự kiện khi thẻ select thay đổi giá trị
+		select.addEventListener('change', function(){
+			groundSize = select.value;
+			if(groundSize == 0){
+				return false;
+			}
+			// 1. gọi hàm vẽ bàn cờ
+			draw();
+		});
+
+		function draw(){
+			var chessTable = ``;
+			var tbody = document.querySelector('tbody');
+			for (var i = 0; i < groundSize; i++) {
+				chessTable += `<tr>`;
+				for (var j = 0; j < groundSize; j++) {
+					chessTable += `<td x="${j}" y="${i}" onclick="play(this)"></td>`;
+				}
+				chessTable+= `</tr>`;
+			}
+
+			tbody.innerHTML = chessTable;
+		}
+
+		function play(e){
+			if(e.innerText == ""){ // nếu thẻ td không có chữ ở trong 
+
+				e.innerText = turn; // viết chữ vào trong thẻ td
+				var color = turn == "X" ? "red" : "green"; // xác định màu chữ x => đỏ, o => xanh
+				e.style.color = color; // gán màu chữ cho thẻ td
+				var checkWin = checkWinner(e);
+				if(checkWin == true){
+					alert('Chuc mung ban da chien thang!!!');
+					draw();
+					return false;
+				}
+				turn = turn == "X" ? "O" : "X"; // đổi turn
+			}
+		}
+
+
+		function checkWinner(e){
+			var xDim = e.getAttribute("x");
+			var yDim = e.getAttribute("y");
+
+			// check hang ngang
+			// tim tat ca cac the td co cung toa do y
+			var listTd = document.querySelectorAll(`[y="${yDim}"]`);
+			var count = 0;
+			for (var i = 0; i < listTd.length; i++) {
+				if(count >= 5){
+					break;
+				}
+
+				if(listTd[i].innerText == turn){
+					count++;
+				}else{
+					count = 0;
+				}
+			}
+
+			if(count >= 5){
+				return true;
+			}
+
+			count = 0;
+
+			// check theo hang doc
+			listTd = document.querySelectorAll(`[x="${xDim}"]`);
+			for (var i = 0; i < listTd.length; i++) {
+				if(count >= 5){
+					break;
+				}
+
+				if(listTd[i].innerText == turn){
+					count++;
+				}else{
+					count = 0;
+				}
+			}
+
+			if(count >= 5){
+				return true;
+			}
+
+			count = 0;
+			var crossX = parseInt(xDim)-parseInt(yDim);
+			var crossY = 0;
+
+			while (crossY <= groundSize) {
+				if(count >= 5){
+					break;
+				}
+				var td = document.querySelector(`[x="${crossX}"][y="${crossY}"]`);
+				if(td !== null && td.innerText == turn){
+					// td.style.background = 'grey';
+					count++;
+				}else{
+					count = 0;
+				}
+				crossX++;
+				crossY++;
+			}
+			if(count >= 5){
+				return true;
+			}
+			
+			return false;
+		}
+	</script>
+	
+</body>
+</html>
