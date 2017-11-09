@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	
+
+	<script type="text/javascript">
+		var dienThoai = {
+			dongMay: 'iphone5',
+			weight: 300,
+			price: 2.5,
+			color: 'white',
+			status: true,
+			battery: 2500,
+			call: function(time){
+				if(this.battery <= 0){
+					console.log('Het pin');
+					this.battery = 0;
+					return false;
+				}
+				this.battery -= time*50;
+
+			},
+			start: function(){
+				this.status= false;
+			}
+		};
+
+		
+		console.log(dienThoai.battery);
+		dienThoai.call(3);
+		console.log(dienThoai.battery);
+		dienThoai.call(10);
+		console.log(dienThoai.battery);
+
+
+
+	</script>
+
+</body>
+</html>
