@@ -1,6 +1,7 @@
 window.lib = {
 	ip: document.getElementById('strIp'),
 	result: document.getElementById('result'),
+	vowel: "ueoai",
 	getLength: function(){
 		var val = this.ip.value;
 		result.innerText = `Do dai cua chuoi = ${val.length} ky tu`;
@@ -26,6 +27,14 @@ window.lib = {
 			result.innerText 
 							= `Không hợp lệ!`;
 		}
+	},
+	checkVowelCharacter: function(){
+		var val = this.ip.value;
+		var count = 0;
+		for (var i = 0; i < val.length; i++) {
+			if(this.vowel.indexOf(val[i]) != -1) count++;
+		}
+		result.innerText = `Có ${count} nguyên âm trong chuỗi!`;
 	}
 }
 
