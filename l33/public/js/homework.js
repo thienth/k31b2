@@ -24,6 +24,7 @@ window.hw  = {
 		// ket qua cuoi cung
 		var capitalizeStr = "";
 		for (var i = 0; i < arr.length; i++) {
+			if(arr[i].length == 0) continue;
 			var upper = arr[i][0].toUpperCase();
 			capitalizeStr += upper + arr[i].slice(1, arr[i].length) + " ";
 		}
