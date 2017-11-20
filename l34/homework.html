@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<input type="text" id="content" >
+	<button type="button" onclick="getFirstVowel()">Submit</button>
+	<script type="text/javascript">
+
+
+		var str = "       thienth dep trai    ";
+		console.log(str.trim());
+
+		// var arr = [1,2,2,3,4,5,6,7];
+
+		// for (var i = arr.length-1; i >= 0; i--) {
+		// 	if(arr[i]%2==0){
+		// 		arr.splice(i, 1);
+		// 	}
+		// }
+
+		// console.log(arr);
+
+
+
+		// var arr = [1,2,3,4,5,6,7,8,9,10];
+		// function checkSoChan(num, index){
+		// 	if(num%2 == 0){
+		// 		console.log(num);
+		// 	}
+		// }
+
+		// var soChan = arr.forEach(checkSoChan);
+
+
+
+
+		function checkVowel(str){
+			var vowel = "ueoai";
+			var flag = false;
+			for (var i = 0; i < vowel.length; i++) {
+				
+				if(str.indexOf(vowel[i]) != -1){
+					flag = true;
+					break;
+				} 
+			}
+
+			if(flag) return str;
+		}
+
+		function getFirstVowel(){
+			// b1 lay noi dung cua the input
+			var value = document.getElementById('content').value;
+			
+			// b2 chia cac tu theo dau cach
+			var arr = value.split(" ");
+
+			// b3 tim trong cac phan tu xem phan tu nao co chua nguyen am dau tien
+			var result = arr.filter(checkVowel);
+
+			console.log(result);
+		}
+		
+
+	</script>
+
+</body>
+</html>
