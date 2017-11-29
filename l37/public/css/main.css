@@ -1,0 +1,5 @@
+@media screen and (max-width: 768px) {
+	.sm-test{
+		height: 200px !important;
+	}
+}
