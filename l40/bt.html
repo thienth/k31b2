@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th>Tên</th>
+				<th>Tuổi</th>
+				<th>Giới tính</th>
+				<th>Nghề nghiệp</th>
+				<th><button onclick="addRow()">Add</button></th>
+			</tr>
+		</thead>
+		<tbody>
+			
+		</tbody>
+	</table>
+
+	<script src="public/plugins/jquery/jquery.min.js"></script>
+
+	<script>
+		
+		function addRow(){
+			var people = {
+				name: 't3h',
+				age: '13',
+				gender: 'nam',
+				job: 'Sinh viên'
+			}
+
+
+			var tr = `<tr>
+					<td>${people.name}</td>
+					<td>${people.age}</td>
+					<td>${people.gender}</td>
+					<td>${people.job}</td>
+				</tr>`;
+			$('tbody').append(tr);
+		}
+
+		
+	</script>
+	
+</body>
+</html>

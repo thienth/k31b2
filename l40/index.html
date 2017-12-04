@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<!-- <h1 id="target">T3H K31B2</h1> -->
+	<!-- <button id="clc">Click me</button> -->
+
+	<!-- <input type="text" name="username" value="" placeholder=""> -->
+<!-- 
+	<input type="checkbox" name="" checked value=""> male
+	<input type="checkbox" name=""  value=""> female
+	<input type="checkbox" name="" checked value=""> gay
+	<input type="checkbox" name=""  value=""> les
+	<input type="checkbox" name="" checked value=""> other -->
+
+	<input type="text" name="left" value="" placeholder="">
+	<button onclick="swapText()">swap text</button>
+	<input type="text" name="right" value="" placeholder="">
+
+	<script src="public/plugins/jquery/jquery.min.js"></script>
+	<script>
+		function swapText(){
+			// b1 lay gia tri cua left
+			var left = $('[name=left]').val();
+			// b2 lay gia tri cua right
+			var right = $('[name=right]').val();
+			// b3 gan gia tri cua left cho 1 bien khac (tmp)
+			var tmp = left;
+			// b4 gan lai gia tri cua left bang right
+			$('[name=left]').val(right);
+			// b5 gan lai gia tri cua right bang tmp
+			$('[name=right]').val(tmp);
+		}
+
+		// su dung jquery de chuyen gia tri giua 2 the input khi click vao button
+
+		// var listChecked = $('[type=checkbox]:checked');
+
+		// dung jquery de set gia tri cho the input text co name=username
+
+		// $('[name=username]').val('t3h php');
+
+		// document.getElementById('target').innerText = 'hello world!';
+		// var innerText = $('#target').text('t4h k31b5');
+		// console.log(innerText);
+		// var btn = document.querySelector('#clc');
+		// btn.addEventListener('click', function(){
+		// 	console.log('clicked!');
+		// })
+		// $('#clc').click(function(){
+		// 	console.log('clicked!');
+		// })
+	</script>
+</body>
+</html>
