@@ -77,27 +77,55 @@
 			}
 
 			if(flag){
-				maxIds++;
-				var tr = `<tr p-id="${maxIds}">
-					<td>${name}</td>
-					<td>${age}</td>
-					<td>${address}</td>
-					<td>
-						<button onclick="update(${maxIds})" type="button" p-id="${maxIds}" class="btn btn-info">Edit</button>
-						<button onclick="remove(this)" type="button" p-id="${maxIds}" class="btn btn-danger btn-remove">Remove</button>
-					</td>
-				</tr>`;
+
+				var id = $('[name=id]').val();
+				if(id > 0){
+					// update
+					var tr = $('tr[p-id='+id+']');
+					var tds = tr.find('td');
+					// gan lai text cho the td dau tien bang gia tri cua name
+					$(tds[0]).text(name);
+					// gan lai gia tri cho the td co index = 1 bang gia tri cua age
+					$(tds[1]).text(age);
+					// gan lai gia tri cho the td co index = 2 bang gia tri cua address
+					$(tds[2]).text(address);
+				}else{
+					// add new
+					maxIds++;
+					var tr = `<tr p-id="${maxIds}">
+						<td>${name}</td>
+						<td>${age}</td>
+						<td>${address}</td>
+						<td>
+							<button onclick="update(${maxIds})" type="button" p-id="${maxIds}" class="btn btn-info">Edit</button>
+							<button onclick="remove(this)" type="button" p-id="${maxIds}" class="btn btn-danger btn-remove">Remove</button>
+						</td>
+					</tr>`;
+				}
 
 				$('tbody').append(tr);
 				$('[name=id]').val('');
-				// $('[name=name]').val('');
-				// $('[name=age]').val('');
-				// $('[name=address]').val('');
+				$('[name=name]').val('');
+				$('[name=age]').val('');
+				$('[name=address]').val('');
+				$('.btn-add').text('Thêm');
 			}
 
 		});
 		function update(id){
-			console.log(id);
+			// xac dinh the tr dua vao id
+			var tr = $('tr[p-id='+id+']');
+			// tim tat ca cac the td trong tr vua xac dinh
+			var tds = tr.find('td');
+			// gan lai gia tri cho the input co name = id
+			$('[name=id]').val(id);
+			// gan lai gia tri cho the input co name = name (bang text cua the td dau tien trong tr)
+			$('[name=name]').val($(tds[0]).text());
+			// gan lai gia tri cho the input co name = age (bang text cua the td co index = 1 trong tr)
+			$('[name=age]').val($(tds[1]).text());
+			// gan lai gia tri cho the input co name = age (bang text cua the td co index = 2 trong tr)
+			$('[name=address]').val($(tds[2]).text());
+			$('.btn-add').text('Sửa');
 		}
 		function remove(element){
 			$(element).parent().parent().remove();
