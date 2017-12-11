@@ -11,17 +11,17 @@
 		<input type="hidden" name="id" value="">
 		<div class="form-group">
 			<label for="">Tên</label>
-			<input type="text" name="name" value="" placeholder="" class="form-control">
+			<input type="text" name="name" value="nguyen van a" placeholder="" class="form-control">
 			<span class="text-danger hide err-name"></span>
 		</div>
 		<div class="form-group">
 			<label for="">Tuổi</label>
-			<input type="number" name="age" value="" placeholder="" class="form-control">
+			<input type="number" name="age" value="23" placeholder="" class="form-control">
 			<span class="text-danger hide err-age"></span>
 		</div>
 		<div class="form-group">
 			<label for="">Địa chỉ</label>
-			<input type="text" name="address" value="" placeholder="" class="form-control">
+			<input type="text" name="address" value="ha noi" placeholder="" class="form-control">
 			<span class="text-danger hide err-address"></span>
 		</div>
 		<div class="text-center">
@@ -45,13 +45,13 @@
 
 	<script src="public/plugins/jquery/jquery.min.js"></script>
 	<script>
+		var maxIds = 0;
 		$('.btn-add').click(function(){
 			var name = $('[name=name]').val();
 			var age = $('[name=age]').val();
 			var address = $('[name=address]').val();
 			var flag = true;
-			var maxIds = 0;
-
+			
 			if(name == ""){
 				$('.err-name').text('Vui lòng nhập tên!');
 				$('.err-name').removeClass('hide');
@@ -83,21 +83,22 @@
 					<td>${age}</td>
 					<td>${address}</td>
 					<td>
-						<button type="button" id="${maxIds}" class="btn btn-info">Edit</button>
-						<button onclick="remove(this)" type="button" id="${maxIds}" class="btn btn-danger btn-remove">Remove</button>
+						<button onclick="update(${maxIds})" type="button" p-id="${maxIds}" class="btn btn-info">Edit</button>
+						<button onclick="remove(this)" type="button" p-id="${maxIds}" class="btn btn-danger btn-remove">Remove</button>
 					</td>
 				</tr>`;
 
 				$('tbody').append(tr);
-				$('[name=name]').val('');
-				$('[name=age]').val('');
-				$('[name=address]').val('');
+				$('[name=id]').val('');
+				// $('[name=name]').val('');
+				// $('[name=age]').val('');
+				// $('[name=address]').val('');
 			}
 
 		});
-		// $('.btn-remove').click(function(){
-		// 	$(this).parent().parent().remove();
-		// })
+		function update(id){
+			console.log(id);
+		}
 		function remove(element){
 			$(element).parent().parent().remove();
 		}
