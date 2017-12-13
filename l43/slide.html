@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<img src="public/images/img1.jpg" width="400">
+	<button onclick="pre()">Pre</button>
+	<button onclick="next()">Next</button>
+	<script src="public/plugins/jquery/jquery.min.js"></script>
+	<script>
+		var imgArr = [
+            "public/images/img1.jpg",
+            "public/images/img2.jpg",
+            "public/images/img3.png",
+            "public/images/img4.png",
+            "public/images/img5.jpg"
+		];
+		var index = 0;
+		var looping = null;
+
+		function pre(){
+			if(index == 0){
+				index = imgArr.length-1;
+			}else{
+				index--;	
+			}
+			
+			$('img').attr('src', imgArr[index]);
+		}
+
+		function next(){
+			if(index == imgArr.length-1){
+				index = 0;
+			}else{
+				index++;	
+			}
+			
+			$('img').attr('src', imgArr[index]);
+		}
+
+		function autoplay(){
+			looping = setInterval(function(){
+				if(index == imgArr.length-1){
+					index = 0;
+				}else{
+					index++;	
+				}
+				
+				$('img').attr('src', imgArr[index]);
+			}, 1000);
+		}
+		autoplay();
+		function stop(){
+			clearInterval(looping);
+		}
+
+		$('img').on('mouseover', function(){
+			stop();
+		});
+		
+		$('img').on('mouseout', function(){
+			autoplay();
+		});
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="public/plugins/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+	<form class="col-md-6 col-md-offset-3">
+		<input type="hidden" name="id" value="">
+		<div class="form-group">
+			<label for="">Tên</label>
+			<input type="text" name="name" value="nguyen van a" placeholder="" class="form-control">
+			<span class="text-danger hide err-name"></span>
+		</div>
+		<div class="form-group">
+			<label for="">Tuổi</label>
+			<input type="number" name="age" value="23" placeholder="" class="form-control">
+			<span class="text-danger hide err-age"></span>
+		</div>
+		<div class="form-group">
+			<label for="">Địa chỉ</label>
+			<input type="text" name="address" value="ha noi" placeholder="" class="form-control">
+			<span class="text-danger hide err-address"></span>
+		</div>
+		<div class="text-center">
+			<button type='button' class="btn btn-success btn-add">Thêm</button>
+		</div>
+	</form>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Tên</th>
+				<th>Tuổi</th>
+				<th>Địa chỉ</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			
+		</tbody>
+	</table>
+
+	<script src="public/plugins/jquery/jquery.min.js"></script>
+	<script>
+		var maxIds = 0;
+		$('.btn-add').click(function(){
+			var name = $('[name=name]').val();
+			var age = $('[name=age]').val();
+			var address = $('[name=address]').val();
+			var flag = true;
+			
+			if(name == ""){
+				$('.err-name').text('Vui lòng nhập tên!');
+				$('.err-name').removeClass('hide');
+				flag = false;
+			}else{
+				$('.err-name').addClass('hide');
+			}
+
+			if(age == "" || age < 0 || age > 100){
+				$('.err-age').text('Vui lòng nhập tên > 0 và <= 100!');
+				$('.err-age').removeClass('hide');
+				flag = false;
+			}else{
+				$('.err-age').addClass('hide');
+			}
+
+			if(address == ""){
+				$('.err-address').text('Vui lòng nhập địa chỉ');
+				$('.err-address').removeClass('hide');
+				flag = false;
+			}else{
+				$('.err-address').addClass('hide');
+			}
+
+			if(flag){
+
+				var id = $('[name=id]').val();
+				if(id > 0){
+					// update
+					var tr = $('tr[p-id='+id+']');
+					var tds = tr.find('td');
+					// gan lai text cho the td dau tien bang gia tri cua name
+					$(tds[0]).text(name);
+					// gan lai gia tri cho the td co index = 1 bang gia tri cua age
+					$(tds[1]).text(age);
+					// gan lai gia tri cho the td co index = 2 bang gia tri cua address
+					$(tds[2]).text(address);
+				}else{
+					// add new
+					maxIds++;
+					var tr = `<tr p-id="${maxIds}">
+						<td>${name}</td>
+						<td>${age}</td>
+						<td>${address}</td>
+						<td>
+							<button onclick="update(${maxIds})" type="button" p-id="${maxIds}" class="btn btn-info">Edit</button>
+							<button onclick="remove(this)" type="button" p-id="${maxIds}" class="btn btn-danger btn-remove">Remove</button>
+						</td>
+					</tr>`;
+				}
+
+				$('tbody').append(tr);
+				$('[name=id]').val('');
+				$('[name=name]').val('');
+				$('[name=age]').val('');
+				$('[name=address]').val('');
+				$('.btn-add').text('Thêm');
+			}
+
+		});
+		function update(id){
+			// xac dinh the tr dua vao id
+			var tr = $('tr[p-id='+id+']');
+			// tim tat ca cac the td trong tr vua xac dinh
+			var tds = tr.find('td');
+			// gan lai gia tri cho the input co name = id
+			$('[name=id]').val(id);
+			// gan lai gia tri cho the input co name = name (bang text cua the td dau tien trong tr)
+			$('[name=name]').val($(tds[0]).text());
+			// gan lai gia tri cho the input co name = age (bang text cua the td co index = 1 trong tr)
+			$('[name=age]').val($(tds[1]).text());
+			// gan lai gia tri cho the input co name = age (bang text cua the td co index = 2 trong tr)
+			$('[name=address]').val($(tds[2]).text());
+			$('.btn-add').text('Sửa');
+		}
+		function remove(element){
+			$(element).parent().parent().remove();
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	
+	<p id="target" title="test something.....">hoang van minh, xoan, xau!!!!</p>
+	<nav id="par">
+		<ul>
+			<li><a href="" title="">trang chu</a></li>
+			<li><a href="" title="">trang chu 2</a></li>
+			<li id="tParent"><a href="" title="">trang chu 3</a></li>
+		</ul>
+	</nav>
+
+	<script src="public/plugins/jquery/jquery.min.js"></script>
+	<script>
+		// var name = "thienth t3h";
+		// // .text(value) 
+		// var currentText = $("#target").text();
+		// console.log(currentText);
+		// setTimeout(function(){
+		// 	$('#target').text(name);
+		// }, 3000)
+		
+
+		//.html()
+		// $('#target').html('<strong>hoang van minh</strong>');
+		//.append()
+		// $('#target').append('<h1>le quang tri</h1>');
+		// $('#target').append('<h1>le quang tri</h1>');
+		// $('#target').append('<h1>le quang tri</h1>');
+		//.css()
+		// $('#target').css('background', 'green');
+		//.attr()
+		// $('#target').attr('title', 'vu van minh');
+		// console.log($('#target').attr('title'));
+		//.parent()
+		// var parent = $('#tParent').parent().parent();
+		// console.log(parent.attr('list', 'done'));
+		//.toggle()
+		// setInterval(function(){
+		// 	$('#target').toggle();
+		// }, 200)
+		//.hide()
+		
+		//.show()
+		//.fadeIn()
+		$('#target').hide();
+		$('#target').fadeIn(5000);
+		//.fadeOut()
+		$('#target').fadeOut(5000);
+		// .remove()
+		// .child()
+		// .find()
+		var listLi = $('#par').find('li#tParent');
+		console.log(listLi);
+		// addClass()
+		// removeClass()
+		// hasClass()
+		// toggleClass()
+		// appendBefore()
+		// appendAfter()
+	</script>
+
+</body>
+</html>
