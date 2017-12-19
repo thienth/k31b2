@@ -16,9 +16,7 @@ $i = [
 echo $i['age'];
 
 
-// echo $a . "<br>";
-// echo $b . "<br>";
-// echo $c . "<br>";
+
 
 
  ?>
