@@ -3,17 +3,20 @@ require_once 'lib.php';
 $fullname = $_GET['fullname'];
 $hometown = $_GET['hometown'];
 
-$data = getFileContent('data.txt');
-$maxId = count($data)+1;
-$data[] = "$maxId|$fullname|$hometown";
+$data = file_get_contents('data.txt');
+$students = studentFormat($data);
+if(count($students) == 0){
+	$maxId = 1;
+}else{
+	$maxId = $students[count($students)-1][0]+1;
+}
+$students[] = [$maxId, $fullname, $hometown];
 
 $fileContent = "";
-foreach ($data as $value) {
-	if($value=="") continue;
-	$fileContent .= "$value";
+foreach ($students as $row) {
+	
+	$fileContent .= $row[0]."|".$row[1]."|".$row[2]."|end";
 }
-
-// var_dump	($fileContent);die;
 
 $file=@fopen('data.txt', 'w');
 if(!$file)
@@ -21,7 +24,7 @@ if(!$file)
 else{
     
     fwrite($file, $fileContent);
-    echo "Thêm dữ liệu thành công";
+    header('location: index.php');
 }
 
 
