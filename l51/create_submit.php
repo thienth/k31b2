@@ -12,20 +12,11 @@ if(count($students) == 0){
 }
 $students[] = [$maxId, $fullname, $hometown];
 
-$fileContent = "";
-foreach ($students as $row) {
-	
-	$fileContent .= $row[0]."|".$row[1]."|".$row[2]."|end";
-}
-
-$file=@fopen('data.txt', 'w');
-if(!$file)
-    echo "Mở file không thành công";
-else{
-    
-    fwrite($file, $fileContent);
-    header('location: index.php');
+if(saveFile('data.txt', $students)){
+	header('location: index.php');
+} else{
+	echo "Lưu không thành công!";
 }
 
 
- ?>
+?>
