@@ -49,6 +49,7 @@ $products = $stmt->fetchAll();
 				<td><?php echo $pro['UnitPrice'] ?></td>
 				<td><?php echo $pro['UnitsInStock'] ?></td>
 				<td>
+					<a href="update-product.php?id=<?php echo $pro['ProductID'] ?>" title="">Update</a>
 					<a href="remove-product.php?id=<?php echo $pro['ProductID'] ?>" title="">Remove</a>
 				</td>
 			</tr>
