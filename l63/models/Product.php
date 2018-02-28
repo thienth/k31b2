@@ -12,6 +12,16 @@ class Product{
 		$sql = "select * from " . self::TABLE_NAME;
 		var_dump($sql);die;
 	}
+
+	static function findOne($id){
+		$model = new static();
+		var_dump($model);die;
+		$sql = "select * from " . self::TABLE_NAME . " where id = $id";
+		$stmt = $model->conn->prepare($sql);
+		$stmt->execute();
+		$result = $stmt->fetchAll();
+		return $result;
+	}
 }
 
  ?>
