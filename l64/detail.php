@@ -6,7 +6,6 @@ require_once 'models/Product.php';
 $model = new Product();
 $product = $model->findOne($id);
 
-
  ?>
 
  <fieldset>
