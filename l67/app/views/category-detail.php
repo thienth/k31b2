@@ -1,0 +1,1 @@
+<h2>Category detail</h2>
